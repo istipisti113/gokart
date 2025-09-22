@@ -1,0 +1,15 @@
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\obj\Debug\net8.0\gokart.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\obj\Debug\net8.0\gokart.AssemblyInfoInputs.cache
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\obj\Debug\net8.0\gokart.AssemblyInfo.cs
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\obj\Debug\net8.0\gokart.csproj.CoreCompileInputs.cache
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\obj\Debug\net8.0\gokart.sourcelink.json
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\bin\Debug\net8.0\gokart.exe
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\bin\Debug\net8.0\gokart.deps.json
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\bin\Debug\net8.0\gokart.runtimeconfig.json
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\bin\Debug\net8.0\gokart.dll
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\bin\Debug\net8.0\gokart.pdb
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\obj\Debug\net8.0\gokart.dll
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\obj\Debug\net8.0\refint\gokart.dll
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\obj\Debug\net8.0\gokart.pdb
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\obj\Debug\net8.0\gokart.genruntimeconfig.cache
+C:\Users\SzaboIstvan1\Desktop\chsarpfeladatok\gokart\gokart\gokart\gokart\obj\Debug\net8.0\ref\gokart.dll
