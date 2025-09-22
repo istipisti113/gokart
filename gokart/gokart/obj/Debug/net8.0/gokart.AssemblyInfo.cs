@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("gokart")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c91a5b4d2e75158c03adeed9c01c1b9ee82f354")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec6d4c3dfea4f414409cc375f62e44da4480cf2b")]
 [assembly: System.Reflection.AssemblyProductAttribute("gokart")]
 [assembly: System.Reflection.AssemblyTitleAttribute("gokart")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
