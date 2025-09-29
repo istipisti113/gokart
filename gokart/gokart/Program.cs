@@ -73,10 +73,32 @@ namespace gokart
                     email = $"{Ekezettelenit(vez)}.{Ekezettelenit(ker)}@gmail.com"
                 };
             }
-            Console.WriteLine("sadfsfdafdsa");
+
+            List<List<idopont>> idopontok = new List<List<idopont>>();
+            for (int i = 0; i < 9; i++)
+            {
+                List<idopont> nap = new List<idopont>();
+                for (int j = 0; j < 11; j++)
+                {
+                    nap.Add(new idopont
+                    {
+                        pilotak = new List<pilota>(),
+                    });
+                }
+            }
+            Menu.menu();
         }
     }
 
+    public class idopont
+    {
+        public List<pilota> pilotak;
+        //public DateTime date;
+        public void foglalas(pilota pilot)
+        {
+            this.pilotak.Add(pilot);
+        }
+    }
     public class pilota
     {
         public string vezeteknev;
