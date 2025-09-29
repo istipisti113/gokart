@@ -48,16 +48,16 @@ namespace gokart
             info["telefon"] = "+36301234567";
             info["weboldal"] = "kinyirakanyar.gov.hu";
 
-            List<String> vezeteknevek = (new StreamReader("vezeteknevek.txt").ReadToEnd()).Replace("\"", " ").Replace(" ", "").Split(",").ToList();
-            List<String> keresztnevek = (new StreamReader("keresztnevek.txt").ReadToEnd()).Replace("\"", " ").Replace(" ", "").Split(",").ToList();
+            List<String> vezeteknevek = (new StreamReader("vezeteknevek.txt").ReadToEnd()).Replace("\'", " ").Replace(" ", "").Split(",").ToList();
+            List<String> keresztnevek = (new StreamReader("keresztnevek.txt").ReadToEnd()).Replace("\'", " ").Replace(" ", "").Split(",").ToList();
 
             List<pilota> pilotak = new List<pilota>();
             Random random = new Random();
 
             for (int i = 0; i < new Random().Next(1, 151); i++)
             {
-                DateTime start = DateTime.Now.AddDays(-16*12*30); // min 16 eves
-                DateTime end = start.AddYears(80); // max 96 
+                DateTime start = DateTime.Now.AddYears(-16); // min 16 eves
+                DateTime end = start.AddYears(-80); // max 96 
                 int range = (start - end).Days;
                 DateTime szulido = end.AddDays(random.Next(range));
                 string vez = vezeteknevek[new Random().Next(vezeteknevek.Count)];
@@ -69,7 +69,8 @@ namespace gokart
                     szuletesiido = szulido,
                     eletkor = DateTime.Now.Year - szulido.Year,
                     nagykoru = DateTime.Now.Year - szulido.Year > 18,
-                    versenyazonosito = $"GO-{}"
+                    versenyazonosito = $"GO-{Ekezettelenit(vez)}{Ekezettelenit(ker)}-{szulido.Year}{szulido.Month}{szulido.Day}",
+                    email = $"{Ekezettelenit(vez)}.{Ekezettelenit(ker)}@gmail.com"
                 };
             }
             Console.WriteLine("sadfsfdafdsa");
@@ -84,10 +85,11 @@ namespace gokart
         public DateTime szuletesiido;
         public bool nagykoru;
         public string versenyazonosito;
+        public string email;
 
         public string ekezettelen()
         {
-            return Ekezettelenit(vezeteknev) + " " + Ekezettelenit(keresztnev);
+            return Gokart.Ekezettelenit(vezeteknev) + " " + Gokart.Ekezettelenit(keresztnev);
         }
     }
 }
