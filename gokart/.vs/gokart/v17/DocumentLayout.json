@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|c:\\users\\szaboistvan1\\desktop\\chsarpfeladatok\\gokart\\gokart\\gokart\\gokart\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|solutionrelative:gokart\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|c:\\users\\szaboistvan1\\desktop\\chsarpfeladatok\\gokart\\gokart\\gokart\\gokart\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|solutionrelative:gokart\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,8 +25,17 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\SzaboIstvan1\\Desktop\\chsarpfeladatok\\gokart\\gokart\\gokart\\gokart\\Menu.cs",
+              "RelativeDocumentMoniker": "gokart\\Menu.cs",
+              "ToolTip": "C:\\Users\\SzaboIstvan1\\Desktop\\chsarpfeladatok\\gokart\\gokart\\gokart\\gokart\\Menu.cs",
+              "RelativeToolTip": "gokart\\Menu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T11:30:09.593Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -32,7 +45,7 @@
               "RelativeDocumentMoniker": "gokart\\Program.cs",
               "ToolTip": "C:\\Users\\SzaboIstvan1\\Desktop\\chsarpfeladatok\\gokart\\gokart\\gokart\\gokart\\Program.cs",
               "RelativeToolTip": "gokart\\Program.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAgwDsAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswGQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T12:35:49.307Z",
               "EditorCaption": ""
