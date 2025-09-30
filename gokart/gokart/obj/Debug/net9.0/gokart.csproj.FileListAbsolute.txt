@@ -1,0 +1,15 @@
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/bin/Debug/net9.0/gokart
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/bin/Debug/net9.0/gokart.deps.json
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/bin/Debug/net9.0/gokart.runtimeconfig.json
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/bin/Debug/net9.0/gokart.dll
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/bin/Debug/net9.0/gokart.pdb
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/obj/Debug/net9.0/gokart.GeneratedMSBuildEditorConfig.editorconfig
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/obj/Debug/net9.0/gokart.AssemblyInfoInputs.cache
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/obj/Debug/net9.0/gokart.AssemblyInfo.cs
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/obj/Debug/net9.0/gokart.csproj.CoreCompileInputs.cache
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/obj/Debug/net9.0/gokart.sourcelink.json
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/obj/Debug/net9.0/gokart.dll
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/obj/Debug/net9.0/refint/gokart.dll
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/obj/Debug/net9.0/gokart.pdb
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/obj/Debug/net9.0/gokart.genruntimeconfig.cache
+/home/istipisti113/program/dotnet/gokart/gokart/gokart/obj/Debug/net9.0/ref/gokart.dll
