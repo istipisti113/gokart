@@ -93,9 +93,9 @@ namespace gokart
             }
           );
         }
+        idopontok.Add(nap);
       }
-      Console.WriteLine("mit szeretne tenni: ");
-      Menu.menu(Menu.opciok, running);
+      Menu.menu(Menu.opciok, running, "mit szeretne tenni: ");
     }
   }
 

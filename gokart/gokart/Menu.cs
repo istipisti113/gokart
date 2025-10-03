@@ -11,25 +11,28 @@ namespace gokart
   static class Menu
   {
     public static Dictionary<string, Action> opciok = new Dictionary<string, Action> {
-      ["kilepes"] = () => {Gokart.running = false;},
-      ["berles"] = () => {Console.Clear(); berles(); Console.ReadKey();Console.Clear();},
-      ["kiiratas"] = () => {Console.Clear(); kiiratas(); Console.ReadKey();Console.Clear();},
-      ["modositas"] = () => {Console.Clear(); modositas(); Console.ReadKey();Console.Clear();},
-      ["azonositok"] = () => {Console.Clear(); versenyazonositok(); Console.ReadKey();Console.Clear();},
+      //["kilepes"] = () => {},
+      ["berles"] = () => {Console.Clear(); berles(); Console.Clear();},
+      ["kiiratas"] = () => {Console.Clear(); kiiratas(); Console.Clear();},
+      ["modositas"] = () => {Console.Clear(); modositas();Console.Clear();},
+      ["azonositok"] = () => {Console.Clear(); versenyazonositok();Console.Clear();},
     };
 
-    public static void menu(Dictionary<string, Action> opciok, bool running)
+    public static void menu(Dictionary<string, Action> opciok, bool running = true, string question="")
     {
       while (running) {
         Console.Clear();
+        if (question!=""){Console.WriteLine(question);}
         for (int i=0; i<opciok.Keys.Count(); i++)
         {
-          Console.WriteLine($"{i} - {opciok.Keys.ToList()[i]}");
+          Console.WriteLine($"{i+1} - {opciok.Keys.ToList()[i]}");
         }
+        Console.WriteLine("0 - kilepes");
         string input = Console.ReadKey().KeyChar.ToString();
         try{
           int valasztas = Convert.ToInt32(input);
-          opciok[opciok.Keys.ToList()[valasztas]]();
+          if (valasztas == 0){running = false;return;};
+          opciok[opciok.Keys.ToList()[valasztas-1]]();
         } catch {
         }
       }
@@ -48,18 +51,31 @@ namespace gokart
         Console.ReadKey();
         return;
       }
-      Console.WriteLine("melyik napra szeretne foglalni? ");
       List<List<idopont>> futamok = szabad_futamok();
       Dictionary<string, Action> futamopciok = new Dictionary<string, Action>();
-      foreach (var day in futamok){
-        futamopciok[day[0].nap.ToString()] = () => {Console.WriteLine("asdffds");};
-      }
 
-      string nap = Console.ReadLine()??"";
-      try {
-        menu(futamopciok);
-      }catch{
+      //menu opciok a nap kivalasztasahoz
+      for (int i = 0;i<futamok.Count(); i++){
+        futamopciok[futamok[i][0].nap.ToString()] = () => {
+
+          Console.Clear();
+          //menu opciok a napon beluli futam kivalasztasahoz
+          int asdf = i;
+          Dictionary<string, Action> idopont_opciok = new Dictionary<string, Action>();
+          //for (int j = 0; j<futamok[i].Count(); j++){ //a napon beluli futamok kozul lehet valasztani, futamok[i] a kivalasztott nap
+          //  idopont_opciok[$"futam {j}"] = () => {
+          //    Console.Clear();
+          //    //futamok[i][j].foglalas(Gokart.pilotak.Find(x=> x.versenyazonosito == azonosito));
+          //    Console.WriteLine("lefoglalva");
+          //    Console.ReadLine();
+          //  };
+          //}
+          Console.WriteLine(futamok.Count());
+          Console.ReadLine();
+          menu(idopont_opciok, true, "menyik idopontra szeretne foglalni? ");
+        };
       }
+      menu(futamopciok, true, "melyik napra szeretne foglalni? ");
     }
 
     public static void kiiratas()
