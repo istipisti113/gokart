@@ -85,8 +85,7 @@ namespace gokart
         List<idopont> nap = new List<idopont>();
         for (int j = 0; j < 11; j++)
         {
-          nap.Add(new idopont
-            {
+          nap.Add(new idopont{
               pilotak = new List<pilota>(),
               start = 8+j,
               nap = i+1,

@@ -20,6 +20,7 @@ namespace gokart
       ["kiiratas"] = (i) => {Console.Clear(); kiiratas(); Console.Clear();},
       ["modositas"] = (i) => {Console.Clear(); modositas();Console.Clear();},
       ["azonositok"] = (i) => {Console.Clear(); versenyazonositok();Console.Clear();},
+      ["foglalasok"] = (i) => {Console.Clear(); foglalasok();Console.Clear();},
     };
 
     public static void menu(Dictionary<string, Action<int>> opciok, bool folyamatos, string question)
@@ -36,7 +37,7 @@ namespace gokart
         try{
           int valasztas = Convert.ToInt32(input);
           if (valasztas == 0){folyamatos = false;return;};
-          opciok[opciok.Keys.ToList()[valasztas-1]](valasztas);
+          opciok[opciok.Keys.ToList()[valasztas-1]](valasztas-1);
         } catch {
         }
       } while (folyamatos);
@@ -70,7 +71,7 @@ namespace gokart
             idopont_opciok[$"futam {j}"] = (kivalasztottFutam) => {
               Console.Clear();
               futamok[kivalasztottNap][kivalasztottFutam].foglalas(Gokart.pilotak.Find(x=> x.versenyazonosito == azonosito));
-              Console.WriteLine($"lefoglalva {kivalasztottNap} napra");
+              Console.WriteLine($"lefoglalva a {Gokart.idopontok[kivalasztottNap][0].nap} napra");
               Console.WriteLine("[enter] a visszalepeshez");
               Console.ReadLine();
               return;
@@ -81,6 +82,21 @@ namespace gokart
         };
       }
       menu(futamopciok, false, "melyik napra szeretne foglalni? ");
+    }
+
+    public static void foglalasok(){
+      bool van = false;
+      Gokart.idopontok.ForEach(x=>{
+        //Console.WriteLine(string.Join(", ", x.FindAll(y=>y.pilotak.Count()>0).Select(y=> y.start)));
+        x.ForEach(y=> {
+          if (y.pilotak.Count()>0){
+            van=true;
+            Console.WriteLine($"{y.nap}, {y.start}");
+          }
+        });
+      });
+      if (!van){Console.WriteLine("nincs foglalas");}
+      Console.ReadLine();
     }
 
     public static void kiiratas()
