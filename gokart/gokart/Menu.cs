@@ -22,9 +22,9 @@ namespace gokart
       ["azonositok"] = (i) => {Console.Clear(); versenyazonositok();Console.Clear();},
     };
 
-    public static void menu(Dictionary<string, Action<int>> opciok, bool running = true, string question="")
+    public static void menu(Dictionary<string, Action<int>> opciok, bool folyamatos, string question)
     {
-      while (running) {
+      do {
         Console.Clear();
         if (question!=""){Console.WriteLine(question);}
         for (int i=0; i<opciok.Keys.Count(); i++)
@@ -35,11 +35,11 @@ namespace gokart
         string input = Console.ReadKey().KeyChar.ToString();
         try{
           int valasztas = Convert.ToInt32(input);
-          if (valasztas == 0){running = false;return;};
+          if (valasztas == 0){folyamatos = false;return;};
           opciok[opciok.Keys.ToList()[valasztas-1]](valasztas);
         } catch {
         }
-      }
+      } while (folyamatos);
     }
 
     public static void versenyazonositok(){
@@ -63,23 +63,24 @@ namespace gokart
         futamopciok[futamok[i][0].nap.ToString()] = (kivalasztottNap) => {
 
           //menu opciok a napon beluli futam kivalasztasahoz
-          Console.WriteLine(kivalasztottNap);
-          Console.ReadLine();
           int ii = i;
           Dictionary<string, Action<int>> idopont_opciok = new Dictionary<string, Action<int>>();
           for (int j = 0; j<futamok[ii-1].Count(); j++){ //a napon beluli futamok kozul lehet valasztani, futamok[i] a kivalasztott nap
             int jj = ii;
             idopont_opciok[$"futam {j}"] = (kivalasztottFutam) => {
               Console.Clear();
-              //futamok[ii][j].foglalas(Gokart.pilotak.Find(x=> x.versenyazonosito == azonosito));
+              futamok[kivalasztottNap][kivalasztottFutam].foglalas(Gokart.pilotak.Find(x=> x.versenyazonosito == azonosito));
               Console.WriteLine($"lefoglalva {kivalasztottNap} napra");
+              Console.WriteLine("[enter] a visszalepeshez");
               Console.ReadLine();
+              return;
             };
           }
-          menu(idopont_opciok, true, "menyik idopontra szeretne foglalni? ");
+          menu(idopont_opciok, false, "menyik idopontra szeretne foglalni? ");
+          return;
         };
       }
-      menu(futamopciok, true, "melyik napra szeretne foglalni? ");
+      menu(futamopciok, false, "melyik napra szeretne foglalni? ");
     }
 
     public static void kiiratas()
