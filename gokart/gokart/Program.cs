@@ -53,8 +53,8 @@ namespace gokart
       info["telefon"] = "+36301234567";
       info["weboldal"] = "kinyirakanyar.gov.hu";
 
-      List<String> vezeteknevek = (new StreamReader("vezeteknevek.txt").ReadToEnd()).Replace("\n", "").Replace("\'", " ").Replace(" ", "").Split(",").ToList();
-      List<String> keresztnevek = (new StreamReader("keresztnevek.txt").ReadToEnd()).Replace("\n", "").Replace("\'", " ").Replace(" ", "").Split(",").ToList();
+      List<String> vezeteknevek = (new StreamReader("vezeteknevek.txt").ReadToEnd()).Replace("\r", "").Replace("\n", "").Replace("\'", " ").Replace(" ", "").Split(",").ToList();
+      List<String> keresztnevek = (new StreamReader("keresztnevek.txt").ReadToEnd()).Replace("\r", "").Replace("\n", "").Replace("\'", " ").Replace(" ", "").Split(",").ToList();
 
       Random random = new Random();
 
@@ -78,6 +78,7 @@ namespace gokart
         };
         pilotak.Add(ujpilota);
       }
+      //addteszt
       pilotak.Add(new pilota());
 
       for (int i = 0; i < 9; i++)
@@ -94,7 +95,15 @@ namespace gokart
         }
         idopontok.Add(nap);
       }
-      Menu.menu(Menu.opciok, running, "mit szeretne tenni: ");
+      Dictionary<string, Action<int>> opciok = new Dictionary<string, Action<int>> {
+        //["kilepes"] = () => {},
+        ["berles"] = (i) => {Console.Clear(); Fuggv.berles(""); Console.Clear();},
+        ["kiiratas"] = (i) => {Console.Clear(); Fuggv.kiiratas(); Console.Clear();},
+        ["modositas"] = (i) => {Console.Clear(); Fuggv.modositas();Console.Clear();},
+        ["azonositok"] = (i) => {Console.Clear(); Fuggv.versenyazonositok();Console.Clear();},
+        ["foglalasok"] = (i) => {Console.Clear(); Fuggv.foglalasok();Console.Clear();},
+      };
+      Menu.menu(opciok, running, "mit szeretne tenni: ", true);
     }
   }
 
