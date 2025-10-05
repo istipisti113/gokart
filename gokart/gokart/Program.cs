@@ -44,6 +44,7 @@ namespace gokart
     public static List<pilota> pilotak = new List<pilota>();
     public static bool running = true;
     public static List<List<idopont>> idopontok = new List<List<idopont>>();
+    public static List<(idopont, idopont, pilota)> dupla = new List<(idopont, idopont, pilota)>();
 
     static void Main(string[] args)
     {

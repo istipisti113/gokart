@@ -15,6 +15,13 @@ namespace gokart
       } else {
         azonosito = azon;
       }
+      //Console.WriteLine("egy vagy ketto futam?");
+      Menu.menu(new Dictionary<string, Action<int>>
+          {
+            ["egy"] = (valasztas) => {},
+            ["ketto"] = (valasztas) => {},
+          }
+          , false, "egy vagy ket futam", true);
       var futamok = filterfutamok("szabad", azonosito);
       var kivalaszott = futamkivalasztas(futamok, azonosito);
       futamok[kivalaszott.Item1][kivalaszott.Item2].foglalas(Gokart.pilotak.Find(x=> x.versenyazonosito == azonosito));
@@ -70,10 +77,12 @@ namespace gokart
       berles(azonosito);
     }
 
-    static List<List<idopont>> filterfutamok(string alapjan, string azonosito=""){
+    static List<List<idopont>> filterfutamok(string alapjan, string azonosito="", int mennyi=1){
       if (alapjan=="pilota"&&azonosito==""){azonosito = getid();}
       var returning = new List<List<idopont>>();
-      Gokart.idopontok.ForEach(x=>{
+      //Gokart.idopontok.ForEach(x=>{
+      for (int i = 0; i<Gokart.idopontok.Count-mennyi; i++){
+        List<idopont> x = Gokart.idopontok[i];
         List<idopont> nap = new List<idopont>();
         x.ForEach(y=>{
           switch (alapjan){
@@ -93,7 +102,7 @@ namespace gokart
           }
         });
         if (nap.Count>0){returning.Add(nap);}
-      });
+      };
       return returning;
     }
     
