@@ -18,17 +18,34 @@ namespace gokart
       //Console.WriteLine("egy vagy ketto futam?");
       Menu.menu(new Dictionary<string, Action<int>>
           {
-            ["egy"] = (valasztas) => {},
-            ["ketto"] = (valasztas) => {},
+            ["egy"] = (valasztas) => {
+              var futamok = filterfutamok("szabad", azonosito);
+              var kivalaszott = futamkivalasztas(futamok, azonosito);
+              futamok[kivalaszott.Item1][kivalaszott.Item2].foglalas(Gokart.pilotak.Find(x=> x.versenyazonosito == azonosito));
+              Console.Clear();
+              Console.WriteLine($"lefoglalva a {Gokart.idopontok[kivalaszott.Item1][0].nap} napra, {Gokart.idopontok[kivalaszott.Item1][0].start-7}. futamra");
+              Console.WriteLine("[enter]");
+              Console.ReadLine();
+            },
+            ["ketto"] = (valasztas) => {
+              try{
+              List<List<List<idopont>>> futamok = filterfutamok_tobb("szabad", azonosito, 2);
+              List<(int,int)> kivalasztott = futamkivalasztas_tobb(futamok, azonosito, 2);
+              List<idopont> csoport = new List<idopont>();
+              foreach ((int, int) i in kivalasztott){
+                foreach (idopont j in futamok[i.Item1-1][i.Item2-8]){
+                  csoport.Add(j);
+                }
+                Gokart.idopontok[i.Item1-1][i.Item2-8].foglalas(Gokart.pilotak.Find(x=>x.versenyazonosito==azonosito));
+              }
+              Gokart.dupla.Add((csoport, Gokart.pilotak.Find(x=>x.versenyazonosito==azonosito)));
+              Console.WriteLine($"lefoglalva a {csoport[0].nap} napra, {csoport[0].start-8} es {csoport[1].start-8} futamokra");
+              Console.WriteLine("[enter]");
+              Console.ReadLine();
+              }catch(Exception e){Console.WriteLine(e);}
+            },
           }
           , false, "egy vagy ket futam", true);
-      var futamok = filterfutamok("szabad", azonosito);
-      var kivalaszott = futamkivalasztas(futamok, azonosito);
-      futamok[kivalaszott.Item1][kivalaszott.Item2].foglalas(Gokart.pilotak.Find(x=> x.versenyazonosito == azonosito));
-      Console.Clear();
-      Console.WriteLine($"lefoglalva a {Gokart.idopontok[kivalaszott.Item1][0].nap} napra");
-      Console.WriteLine("[enter]");
-      Console.ReadLine();
     }
 
     public static void foglalasok(){
@@ -75,6 +92,38 @@ namespace gokart
       string azonosito = getid();
       torles(azonosito);
       berles(azonosito);
+    }
+
+    static List<List<List<idopont>>> filterfutamok_tobb(string alapjan, string azonosito="", int mennyi=1){
+      if (alapjan=="pilota"&&azonosito==""){azonosito = getid();}
+      var returning = new List<List<List<idopont>>>();
+      //napok
+      for (int i = 0; i<Gokart.idopontok.Count; i++){
+        //futamok
+        List<List<idopont>> nap = new List<List<idopont>>();
+        for (int k = 0; k<=Gokart.idopontok[i].Count-mennyi; k++){
+          //futamok a futamcsoportokban
+          bool szabad = true;
+          List<idopont> csoport = new List<idopont>();
+          for (int j = k; j<k+mennyi; j++){
+            //ha Gokart.futamok[j] a ciklus vegeig szabad, akkor talaltunk egy opciot
+            switch (alapjan){
+              case "szabad":
+                if (Gokart.idopontok[i][j].pilotak.Count<20 && !Gokart.idopontok[i][j].pilotak.Exists(x=>x.versenyazonosito==azonosito)){
+                  csoport.Add(Gokart.idopontok[i][j]);
+                } else {szabad = false;}
+                break;
+              default:
+                break;
+            }
+          }
+          if (szabad){
+            nap.Add(csoport);
+          }
+        }
+        if (nap.Count>0){returning.Add(nap);}
+      };
+      return returning;
     }
 
     static List<List<idopont>> filterfutamok(string alapjan, string azonosito="", int mennyi=1){
@@ -125,6 +174,32 @@ namespace gokart
         return "";
       }
       return azonosito;
+    }
+
+    static List<(int, int)> futamkivalasztas_tobb(List<List<List<idopont>>> futamok, string azonosito="", int mennyi=1){
+      List<(int, int)> returning = new List<(int, int)>();
+      //List<List<idopont>> futamok = filterfutamok("szabad");
+      Dictionary<string, Action<int>> futamopciok = new Dictionary<string, Action<int>>();
+      //menu opciok a nap kivalasztasahoz
+      for (int i = 0;i<futamok.Count(); i++){
+        futamopciok[futamok[i][0][0].nap.ToString()] = (kivalasztottNap) => {
+          //menu opciok a napon beluli futamcsoport kivalasztasahoz
+          Dictionary<string, Action<int>> idopont_opciok = new Dictionary<string, Action<int>>();
+          //a napon beluli futamcsoportok kozul lehet valasztani
+          foreach (List<idopont> nap in futamok[kivalasztottNap]){
+            //try{
+            idopont_opciok[string.Join("-", nap.Select(x=>x.start))] = (kivalasztottFutamcsoport) => {
+              returning = futamok[kivalasztottNap][kivalasztottFutamcsoport].Select(x=>(x.nap, x.start)).ToList();
+              return;
+            };
+            //}catch(Exception ex){Console.WriteLine(ex); Console.ReadLine();}
+          }
+          Menu.menu(idopont_opciok, false, "valasza ki a futamot/futamokat ", false);
+          return;
+        };
+      }
+      Menu.menu(futamopciok, false, "valasszon egy napot ",false);
+      return returning;
     }
     
     static (int, int) futamkivalasztas(List<List<idopont>> futamok, string azonosito=""){
