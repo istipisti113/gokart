@@ -103,6 +103,8 @@ namespace gokart
         ["modositas"] = (i) => {Console.Clear(); Fuggv.modositas();Console.Clear();},
         ["azonositok"] = (i) => {Console.Clear(); Fuggv.versenyazonositok();Console.Clear();},
         ["foglalasok"] = (i) => {Console.Clear(); Fuggv.foglalasok();Console.Clear();},
+        ["max"] = (i) => {Console.Clear(); Fuggv.setto(20);Console.Clear();},
+        ["fel"] = (i) => {Console.Clear(); Fuggv.setto(10);Console.Clear();},
       };
       Menu.menu(opciok, running, "mit szeretne tenni: ", true);
     }

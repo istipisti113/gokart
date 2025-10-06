@@ -1,3 +1,5 @@
+using System.Xml.Serialization;
+
 namespace gokart
 {
     public static class Fuggv
@@ -9,6 +11,16 @@ namespace gokart
             Console.ReadLine();
         }
 
+        public static void setto(int mennyi) {
+            List<List<idopont>> futamok = filterfutamok("szabad");
+            (int, int) kivalasztott = futamkivalasztas(futamok);
+            while (Gokart.idopontok[kivalasztott.Item1][kivalasztott.Item2].pilotak.Count<mennyi)
+            {
+                Gokart.idopontok[kivalasztott.Item1][kivalasztott.Item2].foglalas(new pilota());
+            }
+            Console.WriteLine("feltoltve");
+            Console.ReadLine() ;
+        } 
         public static void berles(string azon)
         {
             string azonosito;
@@ -29,7 +41,7 @@ namespace gokart
                     var kivalaszott = futamkivalasztas(futamok, azonosito);
                     futamok[kivalaszott.Item1][kivalaszott.Item2].foglalas(Gokart.pilotak.Find(x => x.versenyazonosito == azonosito));
                     Console.Clear();
-                    Console.WriteLine($"lefoglalva a {Gokart.idopontok[kivalaszott.Item1][0].nap} napra, {Gokart.idopontok[kivalaszott.Item1][0].start - 7}. futamra");
+                    Console.WriteLine($"lefoglalva");
                     Console.WriteLine("[enter]");
                     Console.ReadLine();
                 },
@@ -48,7 +60,7 @@ namespace gokart
                             csoport.Add(Gokart.idopontok[i.Item1][i.Item2]);
                         }
                         //Gokart.dupla.Add((csoport, Gokart.pilotak.Find(x => x.versenyazonosito == azonosito)));
-                        Console.WriteLine($"lefoglalva a {csoport[0].nap} napra, {csoport[0].start - 7} es {csoport[1].start - 7} futamokra");
+                        Console.WriteLine($"lefoglalva");
                         Console.WriteLine("[enter]");
                         Console.ReadLine();
                     }
@@ -261,7 +273,9 @@ namespace gokart
                     {
                         idopont_opciok[$"futam {j.start}"] = (kivalasztottFutam) =>
                         {
-                            returning = (kivalasztottNap, kivalasztottFutam);
+                            //returning = (kivalasztottNap, kivalasztottFutam);
+                            var fut = futamok[kivalasztottNap][kivalasztottFutam];
+                            returning = (fut.nap-1, fut.start-8);
                             return;
                         };
                     }

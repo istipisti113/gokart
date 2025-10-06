@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\SzaboIstvan1\\Desktop\\gokart\\gokart\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|c:\\users\\szaboistvan1\\desktop\\gokart\\gokart\\gokart\\fuggv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|solutionrelative:gokart\\fuggv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|c:\\users\\szaboistvan1\\desktop\\gokart\\gokart\\gokart\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|solutionrelative:gokart\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|c:\\users\\szaboistvan1\\desktop\\gokart\\gokart\\gokart\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|solutionrelative:gokart\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|c:\\users\\szaboistvan1\\desktop\\gokart\\gokart\\gokart\\fuggv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{53673C13-EEA8-4233-B76F-3401356D579F}|gokart\\gokart.csproj|solutionrelative:gokart\\fuggv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,42 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Fuggv.cs",
               "DocumentMoniker": "C:\\Users\\SzaboIstvan1\\Desktop\\gokart\\gokart\\gokart\\Fuggv.cs",
               "RelativeDocumentMoniker": "gokart\\Fuggv.cs",
-              "ToolTip": "C:\\Users\\SzaboIstvan1\\Desktop\\gokart\\gokart\\gokart\\Fuggv.cs",
-              "RelativeToolTip": "gokart\\Fuggv.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowDIAAAB/AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\SzaboIstvan1\\Desktop\\gokart\\gokart\\gokart\\Fuggv.cs*",
+              "RelativeToolTip": "gokart\\Fuggv.cs*",
+              "ViewState": "AgIAACYAAAAAAAAAAAAqwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-06T05:25:30.359Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Menu.cs",
               "DocumentMoniker": "C:\\Users\\SzaboIstvan1\\Desktop\\gokart\\gokart\\gokart\\Menu.cs",
               "RelativeDocumentMoniker": "gokart\\Menu.cs",
               "ToolTip": "C:\\Users\\SzaboIstvan1\\Desktop\\gokart\\gokart\\gokart\\Menu.cs",
               "RelativeToolTip": "gokart\\Menu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T11:30:09.593Z"
+              "WhenOpened": "2025-09-29T11:30:09.593Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\SzaboIstvan1\\Desktop\\gokart\\gokart\\gokart\\Program.cs",
               "RelativeDocumentMoniker": "gokart\\Program.cs",
-              "ToolTip": "C:\\Users\\SzaboIstvan1\\Desktop\\gokart\\gokart\\gokart\\Program.cs",
-              "RelativeToolTip": "gokart\\Program.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAADwv0QAAABIAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\SzaboIstvan1\\Desktop\\gokart\\gokart\\gokart\\Program.cs*",
+              "RelativeToolTip": "gokart\\Program.cs*",
+              "ViewState": "AgIAAFMAAAAAAAAAAADwv2oAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T12:35:49.307Z",
               "EditorCaption": ""
